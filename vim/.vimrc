@@ -20,8 +20,8 @@ let g:mapleader = "\<space>"
 """""""""""""""""""""""""""
 " => Setup vundle plugin  "
 " """"""""""""""""""""""""""
-if filereadable(expand("$VIMHOME/vimrc.bundles"))
-  source $VIMHOME/vimrc.bundles
+if filereadable(expand("$VIMHOME/vimrc_bundles"))
+  source $VIMHOME/vimrc_bundles
 endif
 
 """"""""""""""""""""""""""

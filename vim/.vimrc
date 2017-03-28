@@ -3,7 +3,14 @@ set nocompatible " Set to be non-compatible to vi
 """""""""""""""""""""""""""""
 " => Vim directory path     "
 " """""""""""""""""""""""""""
-let $VIMHOME=expand('<sfile>:p:h:h')
+let $VIMHOME=expand('<sfile>:p:h')
+if WINDOWS()
+    let $VIMHOME=expand('$VIMHOME/vimfiles')
+elseif OSX()
+    let $VIMHOME=expand('$VIMHOME/.vim')
+else
+    let $VIMHOME=expand('$VIMHOME/.vim')
+endif
 
 " Map leader to space bar
 " Note: This line MUST come before any <leader> mappings
@@ -24,8 +31,9 @@ set t_Co=256
 set background=dark
 try
   if filereadable(expand("$HOME/.vimrc_background"))
-    source $HOME/vimrc_background
+    source $HOME/.vimrc_background
   else
+    colorscheme chocolateliquor
     colorscheme jellybeans
   endif
 catch /E185:/

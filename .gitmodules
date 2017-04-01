@@ -18,3 +18,7 @@
 	path = vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 	branch = master
+[submodule "fzf/.fzf"]
+	path = fzf/.fzf
+	url = https://github.com/junegunn/fzf.git
+	branch = master

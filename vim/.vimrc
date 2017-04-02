@@ -39,3 +39,7 @@ try
 catch /E185:/
   colorscheme default
 endtry
+
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif

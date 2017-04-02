@@ -8,6 +8,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'powerline/powerline'
 
 
 Plugin 'chriskempson/base16-vim'

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+PROGRAMS=(bash colors fzf i3wm node vim)
+
+for program in ${PROGRAMS[@]}; do
+    stow $program
+    echo "Configuring $program"
+done
+
+echo "Done!"

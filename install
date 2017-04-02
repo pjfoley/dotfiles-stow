@@ -2,10 +2,13 @@
 
 set -e
 
+LOCATION=$HOME
+DOTFILES="${HOME}/.dotfiles"
+
 PROGRAMS=(bash colors fzf i3wm node vim)
 
 for program in ${PROGRAMS[@]}; do
-    stow $program
+    stow -t "${LOCATION}" "${DOTFILES}/${program}"
     echo "Configuring $program"
 done
 

@@ -1,4 +1,4 @@
-#! /bin/ash
+#! /bin/bash
 
 PACKAGES=( "vim-nox" "python-pip" "powerline" " fonts-powerline")
 

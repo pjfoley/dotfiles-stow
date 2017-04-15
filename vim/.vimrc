@@ -76,6 +76,7 @@ if has("statusline") && !&cp
     python3 powerline_setup()
     python3 del powerline_setup
     let g:Powerline_symbols = 'fancy'
+    let base16colorspace=256
   else
     " Start the status line
     set statusline=%2*%-3.3n%0*\                 " buffer number

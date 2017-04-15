@@ -1,0 +1,4 @@
+if !exists('g:colors_name') || g:colors_name != 'base16-3024'
+  colorscheme base16-3024
+endif
+

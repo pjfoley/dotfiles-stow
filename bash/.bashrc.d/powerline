@@ -1,7 +1,10 @@
-[ ! -s "~/.vim/bundle/powerline/powerline/bindings/shell/powerline.sh"] && exit 1
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
+#! /bin/bash
 
-. "~/.vim/bundle/powerline/powerline/bindings/shell/powerline.sh"
-
+powerline_path=$(python -c 'import pkgutil; print pkgutil.get_loader("powerline").filename' 2>/dev/null)
+  if [[ "$powerline_path" != "" ]]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
+    #source ${powerline_path}/bindings/shell/powerline.sh
+  fi

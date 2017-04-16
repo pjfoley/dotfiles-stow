@@ -1,4 +1,4 @@
-  if isdirectory(expand("$HOME/.fzf"))
-  1     set rtp+=$HOME/.fzf
- 15 endif
+if isdirectory(expand("$HOME/.fzf"))
+  set rtp+=$HOME/.fzf
+endif
 

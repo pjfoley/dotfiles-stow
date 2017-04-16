@@ -101,11 +101,11 @@ endif
 set autoread    " Automatically reload changes if detected
 
 
-""""""""""""""""""""""""""""""                                                                     
+""""""""""""""""""""""""""""""
 " => Configuration vimscript files
 """""""""""""""""""""""""""""""
 if isdirectory(expand("$HOME/.vim/configuration"))
-  for f in split(glob('~/.vim/congfiguration/*.vim'), '\n')
+  for f in split(glob('~/.vim/configuration/*.vim'), '\n')
     exe 'source' f
   endfor
 endif

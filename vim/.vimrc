@@ -33,7 +33,6 @@ try
   if filereadable(expand("$HOME/.vimrc_background"))
     source $HOME/.vimrc_background
   else
-    colorscheme chocolateliquor
     colorscheme jellybeans
   endif
 catch /E185:/

@@ -2,6 +2,22 @@ if !has('nvim')
   set nocompatible " Set to be non-compatible to vi
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  => Identify platforms                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+silent function! OSX()
+  return has('macunix')
+endfunction
+
+silent function! LINUX()
+  return has('unix') && !has('macunix') && !has('win32unix')
+endfunction
+
+silent function! WINDOWS()
+  return  (has('win16') || has('win32') || has('win64'))
+endfunction
+
+
 """""""""""""""""""""""""""""
 " => Vim directory path     "
 " """""""""""""""""""""""""""
@@ -18,6 +34,10 @@ endif
 " Note: This line MUST come before any <leader> mappings
 let mapleader = "\<space>"
 let g:mapleader = "\<space>"
+
+if filereadable(expand("$VIMHOME/configuration/@functions.vim"))
+    source $VIMHOME/configuration/@functions.vim
+endif
 
 """""""""""""""""""""""""""
 " => Setup vundle plugin  "
@@ -43,6 +63,7 @@ try
 catch /E185:/
   colorscheme default
 endtry
+
 """""""""""""""""""""""""""""""""""""""""""""""
 "  => VIM user interface                      "
 """""""""""""""""""""""""""""""""""""""""""""""
@@ -55,6 +76,7 @@ set encoding=utf-8 " set utf-8 as standard encoding
 set lazyredraw     " Don't redraw while executing macros (good performance config)
 set cursorline
 set cursorcolumn
+set colorcolumn=81
 
 " number line settings {{{
 " --------------------------------------------------------------------------------

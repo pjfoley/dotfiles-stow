@@ -1,4 +1,6 @@
-set nocompatible " Set to be non-compatible to vi
+if !has('nvim')
+  set nocompatible " Set to be non-compatible to vi
+endif
 
 """""""""""""""""""""""""""""
 " => Vim directory path     "
@@ -27,7 +29,10 @@ endif
 """"""""""""""""""""""""""
 "  => Colors and Scheme  "
 """"""""""""""""""""""""""
-set t_Co=256
+if !has('nvim')
+  set t_Co=256
+endif
+
 set background=dark
 try
   if filereadable(expand("$HOME/.vimrc_background"))

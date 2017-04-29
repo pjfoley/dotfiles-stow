@@ -2,8 +2,7 @@ if !has('nvim')
   set nocompatible " Set to be non-compatible to vi
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  => Identify platforms                             "
+" Identify platforms {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 silent function! OSX()
   return has('macunix')
@@ -17,18 +16,22 @@ silent function! WINDOWS()
   return  (has('win16') || has('win32') || has('win64'))
 endfunction
 
+"}}}
 
-"""""""""""""""""""""""""""""
-" => Vim directory path     "
+" Vim directory path {{{
 " """""""""""""""""""""""""""
 let $VIMHOME=expand('<sfile>:p:h')
 if WINDOWS()
     let $VIMHOME=expand('$VIMHOME/vimfiles')
+    let $VIMCACHE=expand('$TMP/vim')
 elseif OSX()
     let $VIMHOME=expand('$VIMHOME/.vim')
+    let $VIMCACHE=expand('$HOME/tmp/vim')
 else
     let $VIMHOME=expand('$VIMHOME/.vim')
+    let $VIMCACHE=expand('$HOME/.cache/vim')
 endif
+"}}}
 
 " Map leader to space bar
 " Note: This line MUST come before any <leader> mappings
@@ -39,15 +42,48 @@ if filereadable(expand("$VIMHOME/configuration/@functions.vim"))
     source $VIMHOME/configuration/@functions.vim
 endif
 
-"""""""""""""""""""""""""""
-" => Setup vundle plugin  "
+" Setup vundle plugin {{{
 " """"""""""""""""""""""""""
 if filereadable(expand("$VIMHOME/vimrc_bundles"))
   source $VIMHOME/vimrc_bundles
 endif
+"}}}
 
-""""""""""""""""""""""""""
-"  => Colors and Scheme  "
+" Backup/Swap/Persistence Settings {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has ('persistent_undo')
+	try
+			set undodir=$VIMCACHE . '/und')
+			set undofile
+			set undolevels=2000
+			set undoreload=10000
+	catch
+			call MkDir($VIMCACHE . '/und')
+	endtry
+endif
+try
+    set backupdir=$VIMCACHE . '/bak')
+    set backup
+catch
+		call MkDir($VIMCACHE . '/bak')
+endtry
+
+try
+    set directory=$VIMCACHE . '/swp')
+    set swapfile
+catch
+		call MkDir($VIMCACHE . '/swp')
+endtry
+
+try
+	set directory=$VIMCACHE . '/viw')
+	set swapfile
+catch
+	call MkDir($VIMCACHE . '/viw')
+endtry
+"}}}
+
+" Colors and Scheme {{{
 """"""""""""""""""""""""""
 if !has('nvim')
   set t_Co=256
@@ -64,8 +100,11 @@ catch /E185:/
   colorscheme default
 endtry
 
-"""""""""""""""""""""""""""""""""""""""""""""""
-"  => VIM user interface                      "
+" use a tags file (if any)
+set tags=./tags;
+"}}}
+
+" VIM user interface {{{
 """""""""""""""""""""""""""""""""""""""""""""""
 
 set ruler          " Always show the ruler
@@ -77,8 +116,9 @@ set lazyredraw     " Don't redraw while executing macros (good performance confi
 set cursorline
 set cursorcolumn
 set colorcolumn=81
+"}}}
 
-" number line settings {{{
+" line settings {{{
 " --------------------------------------------------------------------------------
 if has ("autocmd")
   autocmd FocusLost * :set norelativenumber
@@ -117,21 +157,116 @@ if has("statusline") && !&cp
     set statusline+=Char:[%b][0x%B]              " current char
   endif
 endif
+" }}}
 
-""""""""""""""""""""""""""""""
-" => Behaviors               "
+" Behaviors {{{
 """"""""""""""""""""""""""""""
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 set autoread    " Automatically reload changes if detected
+set history=700
+set autowrite
 
+if has ("autocmd")
+	filetype plugin indent on " Enable filetype plugins
+endif
 
-""""""""""""""""""""""""""""""
-" => Configuration vimscript files
+if has ("wildmenu") " Turn on the Wild menu
+	set wildmenu
+
+	set wildmode=longest,list
+
+	" Ignore stuff
+	set wildignore+=*.o,*.a
+	set wildignore+=*~,*.pyc
+	set wildignore+=*.swp,*.tmp
+
+	" Disable image/video/audio files
+	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.bmp,*.avi,*.mkv,*.mov,*.mp3
+
+	" Disable output and VCS files
+	set wildignore+=*.o,*.a,*.out,*.obj,.git,*.hg,*.rbc,*.rbo,*.class,.svn,*.gem
+
+	" Disable compiled files
+	set wildignore+=*.exe,*.pyc,*.elc
+
+	" Disable archive files
+	set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+	" Ignore bundler and sass cache
+	set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,
+				\*.lock
+
+	" Disable temp and backup files
+	set wildignore+=*.tmp,*.swp,*~,._*,.DS_Store,*/.vim/und/*
+endif
+" }}}
+
+" Text, tab and indent related {{{
+"""""""""""""""""""""""""""""""""""""
+set expandtab         " Use spaces instead of tabs
+set smarttab          " Be smart when using tabs
+set list              " Show invisible characters
+set listchars=trail:. " Setup what characters to show
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2         " 1 tab == 2 spaces
+set ffs=unix          " Use Unix as the standard file type
+
+" Set indent options
+set autoindent
+set smartindent
+
+set showmatch " Show matching brackets when text indicator is over them
+set matchtime=2 " How long to show for in tenths of a second
+"}}}
+
+"  => Searching {{{
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+set ignorecase " Ignore case when searching
+set smartcase  " When searching try to be smart about cases
+set incsearch  " Makes search act like search in modern browsers
+set hlsearch   " Highlight search results
+set magic      " Regular expressions
+set so=5       " When searching for text centre the found line in the middle of the screen
+
+set showmatch " Show matching brackets when text indicator is over them
+set matchtime=2 " How long to show for in tenths of a second
+"}}}
+
+" Sounds {{{
+"""""""""""""""""""""""""""""""""""""""""""""""
+set noerrorbells
+set visualbell
+set t_vb=
+" }}}
+
+" Fix pasting into Terminal from System Clipboard {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+if &term =~ "xterm.*" || &term =~ "rxvt.*"
+	let &t_ti = &t_ti . "\e[?2004h"
+	let &t_te = "\e[?2004l" . &t_te
+	function XTermPasteBegin(ret)
+		set pastetoggle=<Esc>[201~
+		set paste
+		return a:ret
+	endfunction
+	map <expr> <Esc>[200~ XTermPasteBegin("i")
+	imap <expr> <Esc>[200~ XTermPasteBegin("")
+	cmap <Esc>[200~ <nop>
+	cmap <Esc>[201~ <nop>
+endif
+"}}}
+
+" Source vimscript files {{{
 """""""""""""""""""""""""""""""
 if isdirectory(expand("$HOME/.vim/configuration"))
   for f in split(glob('~/.vim/configuration/*.vim'), '\n')
     exe 'source' f
   endfor
 endif
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0 

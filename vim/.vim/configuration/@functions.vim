@@ -43,7 +43,7 @@ function! TabLine()
   endfor
   let s .= '%#TabLineFill#'
   return s
-Endfunction
+endfunction
 "}}}
 
 " vim:foldmethod=marker:foldlevel=0 

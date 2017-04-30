@@ -1,4 +1,4 @@
-" --------------------------------------------------------------------------------                 
+" --------------------------------------------------------------------------------
 " maintainer:   Gabriel Adomnicai <gabesoft@gmail.com>
 " purpose:      utility functions
 " --------------------------------------------------------------------------------
@@ -17,4 +17,4 @@ function! MkDir (dir)
 endfunction
 " }}}
 
-" vim:foldmethod=marker:foldlevel=0 
+" vim:foldmethod=marker:foldlevel=0

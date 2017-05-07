@@ -4,12 +4,17 @@ set -e
 
 LOCATION=$HOME
 DOTFILES="${HOME}/.dotfiles"
+INSTALLFILES="${HOME}/.config/dot_install"
 
 PROGRAMS=(bash colors fzf i3wm node vim desktop music)
 
 for program in ${PROGRAMS[@]}; do
     stow -t "${LOCATION}" -d "${DOTFILES}" "${program}"
     echo "Configuring $program"
+done
+
+for program in ${PROGRAMS[@]}; do
+  [ -x "${INSTALLFILES}"/${program}.sh ] && "${INSTALLFILES}"/${program}.sh
 done
 
 echo "Done!"

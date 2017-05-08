@@ -58,6 +58,7 @@ run_scripts()
 
 run_scripts $HOME/.bashrc.d
 run_scripts $HOME/.aliases.d
+run_scripts $HOME/.bash_completion.d
 
 # enable color support of ls and also add handy aliases 
 if [ -x /usr/bin/dircolors ]; then 

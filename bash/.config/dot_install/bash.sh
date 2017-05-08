@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PACKAGES=("bash-completion" "python-pip" "powerline" "fonts-powerline")
+PACKAGES=("bash-completion" "python-pip" "powerline" "fonts-powerline" "curl" "wget")
 
 for package in "${PACKAGES[@]}"; do
     dpkg -s "${package}" >/dev/null 2>&1 && {

@@ -1,0 +1,20 @@
+#include ".config/base16-xresources/xresources/base16-3024-256.Xresources"
+
+!! font configurations (xft)
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+URxvt.saveLines:        8192
+
+URxvt.perl-ext:           default,matcher,searchable-scrollback,selection,selection-autotransform
+URxvt.url-launcher:       i3-sensible-browser
+URxvt.underlineURLs:      true
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+!! - catch ugly URLs
+URxvt.cutchars:          `()'*<>[]{|}"
+

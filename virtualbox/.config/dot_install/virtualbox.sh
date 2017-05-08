@@ -8,20 +8,19 @@ VIRTUALBOX_REPOSITORY="deb http://download.virtualbox.org/virtualbox/debian stre
 VIRTBX_ASC_2016=$(mktemp --suffix=-virtualbox)
 trap "{ rm -f ${VIRTBX_ASC_2016} ${VIRTBX_ASC}; }" EXIT
 
+[ $(which curl) ] || sudo apt-get install -y curl
+
 curl -sSo "${VIRTBX_ASC_2016}" https://www.virtualbox.org/download/oracle_vbox_2016.asc
 
 if [ $(gpg "${VIRTBX_ASC_2016}" 2>/dev/null | grep -s "${KEY_VIRTBX_ASC_2016}" 2>/dev/null) ]; then
-  echo "Add key"
-  sudo apt-key --keyring "/home/pjfoley/tmp/virtualbox/virtualbox.gpg" add "${VIRTBX_ASC_2016}"
-else
-  echo "Get stuffed"
+  sudo apt-key --keyring "/etc/apt/trusted.gpg.d/virtualbox.gpg" add "${VIRTBX_ASC_2016}"
 fi
 
-! grep -q "^${VIRTUALBOX_REPOSITORY}" "${VIRTBOX_APT_LIST}" 2>/dev/null && echo "${VIRTUALBOX_REPOSITORY}" > "${VIRTBOX_APT_LIST}"
+! grep -q "^${VIRTUALBOX_REPOSITORY}" "${VIRTBOX_APT_LIST}" 2>/dev/null && echo "${VIRTUALBOX_REPOSITORY}" | sudo tee "${VIRTBOX_APT_LIST}"
 
 sudo apt-get update
 
-PACKAGES=( "virtualbox-5.1" "dkms" )
+PACKAGES=( "linux-headers-amd64" "virtualbox-5.1" "dkms" )
 
 for package in "${PACKAGES[@]}"; do
   dpkg -s "${package}" >/dev/null 2>&1 && {

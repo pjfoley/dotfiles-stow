@@ -6,6 +6,8 @@ DWN_LOC="/opt/kubernetes"
 [ ! -d "${BIN_LOC}" ] && sudo mkdir -p "${BIN_LOC}"
 [ ! -d "${DWN_LOC}" ] && sudo mkdir -p "${DWN_LOC}"
 
+[ $(which curl) ] || sudo apt-get install -y curl
+
 WWW_KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 WWW_MINIKUBE_VERSION=$(curl -L -s -H 'Accept: application/json' https://github.com/kubernetes/minikube/releases/latest | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
 

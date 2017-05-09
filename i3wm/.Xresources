@@ -18,3 +18,8 @@ URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 !! - catch ugly URLs
 URxvt.cutchars:          `()'*<>[]{|}"
 
+URxvt.copyCommand:  xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+
+URxvt*iso14755: False
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste

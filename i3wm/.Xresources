@@ -9,7 +9,7 @@ Xft.hintstyle:  hintslight
 
 URxvt.saveLines:        8192
 
-URxvt.perl-ext:           default,matcher,searchable-scrollback,selection,selection-autotransform
+URxvt.perl-ext:           default,matcher,searchable-scrollback,selection,selection-autotransform,clipboard
 URxvt.url-launcher:       i3-sensible-browser
 URxvt.underlineURLs:      true
 URxvt.matcher.button:     1

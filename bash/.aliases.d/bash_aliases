@@ -1,12 +1,23 @@
 # GNU ls color
-ls --color=auto > /dev/null 2>&1 && alias ls='ls --color=auto'
-
+if --color=auto > /dev/null 2>&1; then
+      alias ls='ls --color=auto'
+fi
+ 
 # Only some grep supports `--color=auto'
 if echo x | grep --color=auto x >/dev/null 2>&1; then
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 fi
+
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
+alias l.='ls -ld .* --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
+alias lf='ls -Gl | grep ^d' #Only list directories
+alias lsd='ls -Gal | grep ^d' #Only list directories, including hidden ones
+# Show hidden files only
+alias l.='ls -d .*'
 
 alias df='df -h'
 alias du='du -h'
@@ -17,12 +28,6 @@ fi } >/dev/null
 
 command -v free > /dev/null && \
   alias free='free -h'
-
-alias lf='ls -Gl | grep --color=auto ^d' #Only list directories
-alias lsd='ls -Gal | grep --color=auto ^d' #Only list directories, including hidden ones
-
-# Show hidden files only
-alias l.='ls -d .* --color=auto'
 
 # Jump back n directories at a time
 alias ..='cd ..'

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PACKAGES=( "i3" "i3blocks" "i3status" "i3lock" "rofi" "lightdm" "suckless-tools" "rxvt-unicode-256color" "x11-xserver-utils")
+PACKAGES=( "i3" "i3blocks" "i3status" "i3lock" "rofi" "lightdm" "suckless-tools" "rxvt-unicode-256color" "x11-xserver-utils" "xclip")
 
 for package in "${PACKAGES[@]}"; do
     dpkg -s "${package}" >/dev/null 2>&1 && {

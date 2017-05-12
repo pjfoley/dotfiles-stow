@@ -31,9 +31,17 @@ set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10"
+set $virtualbox "vb: "
+set $gmail "mail: "
+set $media "media"
+set $dev "dev"
 
 set $monitor1 "DVI-D-1"
 set $monitor2 "DVI-D-2"
+
+# Configure default workspace for certain applications
+assign [class="VirtualBox"] $virtualbox
+assign [class="^Google-chrome$" instance="^mail.ifoley.id.au$"] $gmail
 
 
 ### General Configuration
@@ -85,6 +93,8 @@ bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+Shift+a focus child
+
+
 
 
 # resize window (you can also use the mouse for that)
@@ -159,12 +169,16 @@ workspace $workspace7 output $monitor1
 workspace $workspace8 output $monitor2
 workspace $workspace9 output $monitor1
 workspace $workspace10 output $monitor2
+workspace $virtualbox output $monitor2
+workspace $gmail output $monitor2
+workspace $media output $monitor2
+workspace $dev output $monitor1
 
 # Floating
   for_window [class="Lxappearance"] floating enable
   for_window [class="Seahorse"] floating enable
   for_window [class="Pavucontrol"] floating enable
-  # for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+  for_window [class="(?i)VirtualBox" title="(?i)Manager"] layout tabbed
 
 # Widow Colours
 #                         border  background text    indicator
@@ -216,10 +230,18 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+exec --no-startup-id ~/bin/autoxrandr
+exec --no-startup-id feh --recursive --randomize --bg-fill ~/.config/wallpapers
+exec --no-startup-id i3-msg "workspace 1; exec google-chrome-stable --new-window"
+
+
+# # Setup layouts
+exec --no-startup-id ~/.config/i3/layouts/dev.sh
+exec --no-startup-id ~/.config/i3/layouts/media.sh
+
 # Applications
 
 bindsym $mod+n exec --no-startup-id thunar
 
-
-exec --no-startup-id ~/bin/autoxrandr
-exec --no-startup-id feh --recursive --randomize --bg-fill ~/.config/wallpapers
+exec --no-startup-id VirtualBox
+exec --no-startup-id google-chrome-stable --new-window --app=http://mail.ifoley.id.au/

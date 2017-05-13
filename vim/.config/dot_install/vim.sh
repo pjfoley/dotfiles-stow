@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PACKAGES=( "vim-nox" "python-pip" "powerline" "fonts-powerline")
+PACKAGES=( "vim-nox" "python-pip" "powerline" "fonts-powerline" "curl")
 
 # Youcompleteme dependancies
 PACKAGES+=( "build-essential" "cmake" "python-dev" "python3-dev")

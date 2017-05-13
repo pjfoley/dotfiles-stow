@@ -42,10 +42,10 @@ if filereadable(expand("$VIMHOME/configuration/@functions.vim"))
     source $VIMHOME/configuration/@functions.vim
 endif
 
-" Setup vundle plugin {{{
+" Setup plug plugin {{{
 " """"""""""""""""""""""""""
-if filereadable(expand("$VIMHOME/vimrc_bundles"))
-  source $VIMHOME/vimrc_bundles
+if filereadable(expand("$VIMHOME/plug.vim"))
+  source $VIMHOME/plug.vim
 endif
 "}}}
 

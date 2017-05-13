@@ -13,6 +13,8 @@ for program in ${PROGRAMS[@]}; do
     echo "Configuring $program"
 done
 
+[ dpkg -s "apt-transport-https" >/dev/null 2>&1 ] || sudo apt-get install -y apt-transport-https
+
 for program in ${PROGRAMS[@]}; do
   [ -x "${INSTALLFILES}"/${program}.sh ] && "${INSTALLFILES}"/${program}.sh
 done

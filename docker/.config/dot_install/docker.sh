@@ -2,7 +2,7 @@
 
 DOCKER_APT_LIST="/etc/apt/sources.list.d/docker.list"
 
-KEY_DOCKER_ASC_2016="9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
+KEY_DOCKER_ASC_2016="9DC858229FC7DD38854AE2D88D81803C0EBFCD88"
 DOCKER_REPOSITORY="deb [arch=amd64] https://download.docker.com/linux/debian stretch stable"
 
 DOCKER_ASC_2016=$(mktemp --suffix=-docker)

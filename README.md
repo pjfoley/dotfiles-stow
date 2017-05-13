@@ -13,7 +13,7 @@ To update git pull --recurse-submodules --jobs 8
 .dotfiles/install
 
 *Vim Install*
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 
 *Things to do after install*

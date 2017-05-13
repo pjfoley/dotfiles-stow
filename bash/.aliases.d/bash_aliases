@@ -10,14 +10,14 @@ if echo x | grep --color=auto x >/dev/null 2>&1; then
   alias egrep='egrep --color=auto'
 fi
 
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
-alias l.='ls -ld .* --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F'
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F --color=auto'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F --color=auto'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F --color=auto'
+alias l.='ls -ld .* --group-directories-first --time-style=+"%d.%m.%Y %H:%M" -F --color=auto'
 alias lf='ls -Gl | grep ^d' #Only list directories
 alias lsd='ls -Gal | grep ^d' #Only list directories, including hidden ones
 # Show hidden files only
-alias l.='ls -d .*'
+alias l.='ls -d .* --color=auto'
 
 alias df='df -h'
 alias du='du -h'

@@ -27,13 +27,13 @@ result=$?
   if [ result ]; then
     rm -R -f "${GOLANG_OPT}/${GOLANG_VERSION}"
     mkdir -p "${GOLANG_OPT}/${GOLANG_VERSION}"
-    tar xzf "${GO_DWNLD_TEMP}" -C "${GOLANG_OPT}/${GOLANG_VERSION}"
+    sudo tar xzf "${GO_DWNLD_TEMP}" -C "${GOLANG_OPT}/${GOLANG_VERSION}"
   else
     echo "Broken download"
     exit 1
   fi
 fi
 
-[ -e "${GOLANG_USR}/go" ] && rm -R "${GOLANG_USR}/go"
+[ -e "${GOLANG_USR}/go" ] && sudo rm -R "${GOLANG_USR}/go"
 
-ln -sf "${GOLANG_OPT}/${GOLANG_VERSION}/go" "${GOLANG_USR}/go"
+sudo ln -sf "${GOLANG_OPT}/${GOLANG_VERSION}/go" "${GOLANG_USR}/go"

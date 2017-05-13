@@ -25,8 +25,8 @@ if [ ! $ALREADY_DOWNLOADED ]; then
 result=$?
 
   if [ result ]; then
-    rm -R -f "${GOLANG_OPT}/${GOLANG_VERSION}"
-    mkdir -p "${GOLANG_OPT}/${GOLANG_VERSION}"
+    sudo rm -R -f "${GOLANG_OPT}/${GOLANG_VERSION}"
+    sudo mkdir -p "${GOLANG_OPT}/${GOLANG_VERSION}"
     sudo tar xzf "${GO_DWNLD_TEMP}" -C "${GOLANG_OPT}/${GOLANG_VERSION}"
   else
     echo "Broken download"

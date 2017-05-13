@@ -29,5 +29,3 @@ for package in "${PACKAGES[@]}"; do
     sudo apt-get install -y "${package}"
   }
 done
-
-sudo groupadd docker

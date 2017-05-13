@@ -6,7 +6,7 @@ LOCATION=$HOME
 DOTFILES="${HOME}/.dotfiles"
 INSTALLFILES="${HOME}/.config/dot_install"
 
-PROGRAMS=(bash colors desktop fzf golang i3wm kubernetes music node vim virtualbox)
+PROGRAMS=(bash colors desktop docker fzf golang i3wm kubernetes music node vim virtualbox)
 
 for program in ${PROGRAMS[@]}; do
     stow -t "${LOCATION}" -d "${DOTFILES}" "${program}"

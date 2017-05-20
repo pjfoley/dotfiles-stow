@@ -1,9 +1,9 @@
 #! /bin/bash
 
-GOOGLE_APT_LIST="/etc/apt/sources.list.d/google.list"
+GOOGLE_APT_LIST="/etc/apt/sources.list.d/google-chrome.list"
 
 KEY_GOOGLE_ASC_2016="4CCA1EAF950CEE4AB83976DCA040830F7FAC5991"
-GOOGLE_REPOSITORY="deb http://dl.google.com/linux/chrome/deb/ stable main"
+GOOGLE_REPOSITORY="deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
 GOOGLE_ASC_2016=$(mktemp --suffix=-google)
 trap "{ rm -f ${GOOGLE_ASC_2016} ${GOOGLE_ASC}; }" EXIT

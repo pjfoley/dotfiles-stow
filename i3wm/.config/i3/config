@@ -2,6 +2,29 @@
 # Other references
 #   * https://github.com/alexbooker/dotfiles/blob/master/.i3/config
 
+
+## TODO Update to pull colours from Xresources
+# Source - https://github.com/eddhannay/dotfiles/blob/master/i3/.config/i3/config
+# https://github.com/Airblader/dotfiles-manjaro/blob/master/.i3/config
+# set_from_resource $darkred     color1  #000000
+# set_from_resource $red         color9  #000000
+# set_from_resource $darkgreen   color2  #000000
+# set_from_resource $green       color10 #000000
+# set_from_resource $darkyellow  color3  #000000
+# set_from_resource $yellow      color11 #000000
+# set_from_resource $darkblue    color4  #000000
+# set_from_resource $blue        color12 #000000
+# set_from_resource $darkmagenta color5  #000000
+# set_from_resource $magenta     color13 #000000
+# set_from_resource $darkcyan    color6  #000000
+# set_from_resource $cyan        color14 #000000
+# set_from_resource $darkwhite   color7  #000000
+# set_from_resource $white       color15 #000000
+# set $black       #282828
+# set $darkblack   #1d2021
+# set $transparent #00000000
+
+
 ### Constants
 set $mod Mod4
 set $base00 #101218
@@ -126,7 +149,25 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# # Menus ##############################################
 
+# # System menu
+# set $sysmenu "system:  [s]uspend [l]ock [r]eload re[b]oot [p]oweroff [c]onf [e]xit"
+# bindsym $mod+q mode $sysmenu
+# mode $sysmenu {
+#     # restart i3 inplace (preserves your layout/session)
+#     bindsym r restart
+#     bindsym x reload /home/leaf/.i3/config2; mode "default"
+#     bindsym s exec systemctl suspend; mode "default"
+#     bindsym b exec systemctl reboot
+#     bindsym p exec systemctl shutdown
+#     bindsym c exec roxterm -e vim .i3/config; mode "default"
+#     bindsym l exec i3lock -n -i ~/.lock.png; mode "default"
+#     bindsym e exit
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+#     bindsym $mod+q mode "default"
+# }
 
 
 # start a terminal
@@ -173,6 +214,10 @@ workspace $virtualbox output $monitor2
 workspace $gmail output $monitor2
 workspace $media output $monitor2
 workspace $dev output $monitor1
+
+# Move focused workspace to another display
+bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Right move workspace to output right
 
 # Floating
   for_window [class="Lxappearance"] floating enable
@@ -229,6 +274,12 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+## TODO: Works for ncmpcpp, need to put into a script
+# bindsym XF86AudioPlay exec mpc toggle
+# bindsym XF86AudioNext exec mpc next
+# bindsym XF86AudioPrev exec mpc prev
+# bindsym XF86AudioStop exec mpc stop
 
 exec --no-startup-id ~/bin/autoxrandr
 exec --no-startup-id feh --recursive --randomize --bg-fill ~/.config/wallpapers

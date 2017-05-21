@@ -8,6 +8,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 
+" Plugin 'ekalinin/Dockerfile.vim'
+
 if filereadable(expand("~/.vimrc.plug.local"))
   source ~/.vimrc.plug.local
 endif

@@ -17,12 +17,13 @@ vim +PlugInstall +qall
 
 
 *Things to do after install*
+mv .bashrc .bashrc.org
 
 vim
   - Install YouCompleteMe
 
 Virtualbox
-  - Under Debian Stretch I had an issue and needed to update the kernel.  Check uname -a, update to the next point release in my instance (apt-get install linux-image-4.9.0-2-amd64)
+  - Under Debian Stretch I had an issue and needed to update the kernel.  Check uname -a, update to the next point release in my instance (sudo apt-get install linux-image-4.9.0-2-amd64  /sbin/vboxconfig)
 
 DOCKER
  - add user to docker group (sudo usermod -aG docker $USER)

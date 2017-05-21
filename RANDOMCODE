@@ -1,0 +1,41 @@
+#VIM
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+** Source - https://github.com/lebenlechzer/dotfiles/blob/master/vimrc
+
+filetype plugin indent on
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smartindent
+autocmd filetype c,asm,python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType make setlocal noexpandtab
+autocmd FileType tex setlocal tw=0 spell
+autocmd FileType tex setlocal syntax=tex
+
+
+
+** Source - https://github.com/eddhannay/dotfiles/blob/master/vim/.vimrc
+
+call plug#begin('~/.vim/plugged')
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+	Plug 'christoomey/vim-tmux-navigator'	
+	Plug 'chriskempson/vim-tomorrow-theme'
+	Plug 'ekoeppen/taskpaper.vim'
+	Plug 'othree/html5.vim'
+	Plug 'scrooloose/syntastic'
+	Plug 'scrooloose/nerdtree'
+	Plug 'itchyny/lightline.vim'
+	Plug 'bling/vim-bufferline'
+	Plug 'mustache/vim-mustache-handlebars'
+	Plug 'benmills/vimux'
+call plug#end()
+
+"Fuzzy finder
+let g:fzf_action = {
+  \ 'ctrl-m': 'e',
+  \ 'ctrl-t': 'tabedit',
+  \ 'alt-j':  'botright split',
+  \ 'alt-k':  'topleft split',
+  \ 'alt-h':  'vertical topleft split',
+  \ 'alt-l':  'vertical botright split' }

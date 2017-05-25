@@ -1,0 +1,7 @@
+rofi.eh: 2
+rofi.lines: 5
+rofi.line-margin: 5
+rofi.font: System San Francisco Display 18
+rofi.opacity: 80
+rofi.modi: window,run,ssh,Workspaces:~/.config/rofi/scripts/cli_i3_switch_workspaces.sh
+

@@ -27,3 +27,9 @@ Virtualbox
 
 DOCKER
  - add user to docker group (sudo usermod -aG docker $USER)
+
+VIRTUALBOX
+ - configure location for Virtualbox machines (vboxmanage setproperty machinefolder /path/to/directory/)
+ - add user to docker group (sudo usermod -aG vboxusers $USER)
+ - change folder group owner (sudo chgrp vboxusers /path/to/directory )
+ - change folder group modes (sudo chmod -R g+srwx /path/to/directory )

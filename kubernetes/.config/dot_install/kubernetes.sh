@@ -33,3 +33,12 @@ if [ ! -x "${BIN_LOC}/minikube" ] || [ true == "${MINIKUBE_DOWNLOAD}" ]; then
     && sudo ln -fs "${DWN_LOC}/minikube-${WWW_MINIKUBE_VERSION}" "${BIN_LOC}/minikube"
 fi
 
+PACKAGES=( "net-tools" )
+
+for package in "${PACKAGES[@]}"; do
+    dpkg -s "${package}" >/dev/null 2>&1 && {
+        echo "${package} is installed."
+    } || {
+        sudo apt-get install -y "${package}"
+    }
+done

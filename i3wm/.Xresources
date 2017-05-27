@@ -1,4 +1,5 @@
 #include ".config/base16-xresources/xresources/base16-3024-256.Xresources"
+#include ".config/rofi/themes/android_notification.theme"
 
 !! font configurations (xft)
 Xft.dpi:        96

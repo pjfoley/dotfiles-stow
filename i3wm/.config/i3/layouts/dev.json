@@ -20,7 +20,7 @@
             "percent": 0.5,
             "swallows": [
                {
-               "class": "^URxvt$"
+               "class": "^X\\-terminal\\-emulator$"
                }
             ],
             "type": "con"
@@ -46,7 +46,7 @@
                     "percent": 0.5,
                     "swallows": [
                        {
-                       "class": "^URxvt$"
+                       "class": "^X\\-terminal\\-emulator$"
                        }
                     ],
                     "type": "con"

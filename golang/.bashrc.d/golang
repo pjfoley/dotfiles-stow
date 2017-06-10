@@ -1,6 +1,6 @@
 #! /bin/bash
 
-GOPATH="${USER}/go"
+GOPATH="${HOME}/go"
 GOBIN="/user/local/go/bin"
 
 [ ! -d "${GOPATH}" ] && mkdir "${GOPATH}"

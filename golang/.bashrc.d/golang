@@ -1,0 +1,18 @@
+#! /bin/bash
+
+GOPATH="${USER}/go"
+GOBIN="/user/local/go/bin"
+
+[ ! -d "${GOPATH}" ] && mkdir "${GOPATH}"
+
+# Setup GOHOME
+# ---------
+if [[ ! "$PATH" == *${GOPATH}/bin* ]]; then
+    export PATH="$PATH:${GOPATH}/bin"
+fi
+
+# Setup GOBIN
+# ---------
+if [[ ! "$PATH" == *${GOBIN}* ]]; then
+    export PATH="$PATH:${GOBIN}"
+fi

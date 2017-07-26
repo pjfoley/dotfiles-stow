@@ -7,6 +7,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go'
+
 
 " Plugin 'ekalinin/Dockerfile.vim'
 

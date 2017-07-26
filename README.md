@@ -21,6 +21,7 @@ mv .bashrc .bashrc.org
 
 vim
   - Install YouCompleteMe
+vim +GoInstallBinaries +qall
 
 Virtualbox
   - Under Debian Stretch I had an issue and needed to update the kernel.  Check uname -a, update to the next point release in my instance (sudo apt-get install linux-image-4.9.0-2-amd64  /sbin/vboxconfig)

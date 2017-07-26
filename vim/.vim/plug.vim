@@ -7,14 +7,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'fatih/vim-go'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
+Plug 'Valloric/YouCompleteMe'
 
-
-" Plugin 'ekalinin/Dockerfile.vim'
 
 if filereadable(expand("~/.vimrc.plug.local"))
   source ~/.vimrc.plug.local

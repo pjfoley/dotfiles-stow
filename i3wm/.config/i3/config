@@ -59,8 +59,8 @@ set $gmail "mail: "
 set $media "media"
 set $dev "dev"
 
-set $monitor1 "DVI-D-1"
-set $monitor2 "DVI-D-2"
+set $monitor1 "DVI-D-0"
+set $monitor2 "DVI-D-1"
 
 # Configure default workspace for certain applications
 assign [class="VirtualBox"] $virtualbox

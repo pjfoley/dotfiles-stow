@@ -1,0 +1,10 @@
+{
+  "segment_data" : {
+    "powerline.segments.vim.plugin.syntastic.syntastic" : {
+      "args" : {
+      "err_format" : "Err: {first_line} #{num} ",
+      "warn_format" : "Warn: {first_line} #{num} "
+      }
+    }
+  }
+}

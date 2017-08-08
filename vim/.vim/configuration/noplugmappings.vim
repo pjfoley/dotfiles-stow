@@ -1,3 +1,6 @@
+" Fast saving
+nmap <leader>w :w!<cr>
+
 " Tab creation/movement
 map <leader>tc :tabnew<cr>
 map <leader>to :tabonly<cr>

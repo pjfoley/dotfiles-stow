@@ -7,9 +7,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'

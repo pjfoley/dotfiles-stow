@@ -17,3 +17,7 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1
       \}
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>', '<tab>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>', '<s-tab>']
+let g:SuperTabDefaultCompletionType = '<C-n>'

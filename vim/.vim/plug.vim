@@ -16,6 +16,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-repeat'

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+GCLOUD_COMPLETION="/opt/gcloud/latest/completion.bash.inc"
+GCLOUD_BIN="/opt/gcloud/latest/bin"
+
+# Setup GCLOUD_BASH_COMPLETION
+# ---------
+if [[ -f "${GCLOUD_COMPLETION}" ]]; then
+    source "${GCLOUD_COMPLETION}"
+fi
+
+# Setup GCLOUD_BIN
+# ---------
+if [[ ! "$PATH" == *${GCLOUD_BIN}* ]]; then
+    export PATH="$PATH:${GCLOUD_BIN}"
+fi

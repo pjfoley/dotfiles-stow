@@ -1,7 +1,6 @@
 #! /bin/bash
 
-ISTIO_BIN="/usr/local/go/bin"
-
+ISTIO_BIN="/opt/istio/latest/bin"
 
 # Setup ISTIO_BIN
 # ---------

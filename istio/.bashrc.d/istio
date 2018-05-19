@@ -1,0 +1,10 @@
+#! /bin/bash
+
+ISTIO_BIN="/usr/local/go/bin"
+
+
+# Setup ISTIO_BIN
+# ---------
+if [[ ! "$PATH" == *${ISTIO_BIN}* ]]; then
+    export PATH="$PATH:${ISTIO_BIN}"
+fi

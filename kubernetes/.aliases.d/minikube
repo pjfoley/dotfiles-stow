@@ -1,0 +1,35 @@
+alias mk=minikube
+
+minikube-host() {
+  test $(minikube status | grep Running | wc -l) -eq 2 && $(minikube status | grep -q 'Correctly Configured') || minikube start
+  rval=$?
+  if [[ $rval -ge 1 ]]; then
+    echo "Error: Is minikube running?"
+    exit 1
+  fi
+
+  HOSTSFILE=/etc/hosts
+  MINIKUBE_HOSTS="minikube minikube.local"
+  MINIKUBE_IP=$(minikube ip)
+  HOSTS_ENTRY="$MINIKUBE_IP $MINIKUBE_HOSTS"
+
+  if grep -Fq "$MINIKUBE_IP" "$HOSTSFILE" > /dev/null
+  then
+      sudo sed -i '' "s/^$MINIKUBE_IP.*/$HOSTS_ENTRY/" "$HOSTSFILE"
+      echo "Updated hosts entry"
+  else
+      echo "#Added by script $0" | sudo tee -a "$HOSTSFILE"
+      echo "$HOSTS_ENTRY" | sudo tee -a "$HOSTSFILE"
+      echo "Added hosts entry"
+  fi
+}
+
+minikube-eval() {
+  test $(minikube status | grep Running | wc -l) -eq 2 && $(minikube status | grep -q 'Correctly Configured') || minikube start
+  rval=$?
+  if [[ $rval -ge 1 ]]; then
+    echo "Error: Is minikube running?"
+    exit 1
+  fi
+  eval $(minikube docker-env)
+}

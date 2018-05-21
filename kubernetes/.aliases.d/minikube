@@ -1,4 +1,5 @@
 alias mk=minikube
+complete -o default -F __start_minikube mk
 
 minikube-host() {
   test $(minikube status | grep Running | wc -l) -eq 2 && $(minikube status | grep -q 'Correctly Configured') || minikube start

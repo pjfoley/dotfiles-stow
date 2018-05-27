@@ -10,13 +10,13 @@ minikube-host() {
   fi
 
   HOSTSFILE=/etc/hosts
-  MINIKUBE_HOSTS="minikube minikube.local"
+  MINIKUBE_HOSTS="mk minikube minikube.local"
   MINIKUBE_IP=$(minikube ip)
   HOSTS_ENTRY="$MINIKUBE_IP $MINIKUBE_HOSTS"
 
-  if grep -Fq "$MINIKUBE_IP" "$HOSTSFILE" > /dev/null
+  if grep -Fq "$MINIKUBE_HOSTS" "$HOSTSFILE" > /dev/null
   then
-      sudo sed -i '' "s/^$MINIKUBE_IP.*/$HOSTS_ENTRY/" "$HOSTSFILE"
+      sudo sed -i "s/.*$MINIKUBE_HOSTS$/$HOSTS_ENTRY/" "$HOSTSFILE"
       echo "Updated hosts entry"
   else
       echo "#Added by script $0" | sudo tee -a "$HOSTSFILE"

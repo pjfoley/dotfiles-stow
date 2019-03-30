@@ -18,6 +18,9 @@ GOLANG_USR="/usr/local"
 GOLANG_VERSION="1.11.4"
 GOLANG_SHA256="fb26c30e6a04ad937bbc657a1b5bba92f80096af1e8ee6da6430c045a8db3a5b"
 
+GOLANG_VERSION="1.12"
+GOLANG_SHA256="750a07fef8579ae4839458701f4df690e0b20b8bcce33b437e4df89c451b6f13"
+
 [ ! -d "${GOLANG_OPT}" ] && sudo mkdir -p "${GOLANG_OPT}"
 
 GO_DWNLD_TEMP=$(mktemp --suffix=-golang)

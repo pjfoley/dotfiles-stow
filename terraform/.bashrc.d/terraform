@@ -1,0 +1,10 @@
+#! /bin/bash
+
+TERRAFORM_BIN="/opt/terraform/latest"
+
+
+# Setup TERRAFORM_BIN
+# ---------
+if [[ ! "$PATH" == *${TERRAFORM_BIN}* ]]; then
+    export PATH="$PATH:${TERRAFORM_BIN}"
+fi

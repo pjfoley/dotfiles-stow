@@ -19,10 +19,11 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag': 'v1.20', 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-repeat'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
+Plug 'hashivim/vim-terraform.git'
 Plug 'Valloric/YouCompleteMe'
 
 

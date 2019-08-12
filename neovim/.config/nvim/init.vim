@@ -13,19 +13,25 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'spf13/vim-autoclose'
 Plug 'chriskempson/base16-vim'
+" Intellisense Engine
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'Shougo/denite.nvim'
+Plug 'Shougo/echodoc.vim'
 Plug 'tpope/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-" OMG - insanely awesome fuzzy search and blazing fast grep
-" https://github.com/junegunn/fzf (parent project)
-" https://github.com/junegunn/fzf.vim (more extensive wrapper)
-" https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2#.rkhrm332m
-" To update: :PlugUpdate fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-repeat'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-surround'
+Plug 'othree/yajs.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 "##############################################################################

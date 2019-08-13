@@ -2,7 +2,7 @@
 
 OPT_APP_PATH="/opt/gcloud"
 
-WWW_GCLOUD_VERSION="228.0.0"
+WWW_GCLOUD_VERSION="247.0.0"
 
 [ ! -d "${OPT_APP_PATH}" ] && sudo mkdir -p "${OPT_APP_PATH}"
 

@@ -20,7 +20,7 @@ fi
 
 sudo apt-get update
 
-PACKAGES=( "linux-headers-amd64" "virtualbox-5.2" "dkms" )
+PACKAGES=( "linux-headers-amd64" "virtualbox-6.0" "dkms" )
 
 for package in "${PACKAGES[@]}"; do
   dpkg -s "${package}" >/dev/null 2>&1 && {

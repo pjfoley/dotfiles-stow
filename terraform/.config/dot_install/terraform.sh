@@ -2,7 +2,7 @@
 
 OPT_APP_PATH="/opt/terraform"
 
-WWW_TERRAFORM_VERSION="0.12.1"
+WWW_TERRAFORM_VERSION="0.12.6"
 
 [ ! -d "${OPT_APP_PATH}" ] && sudo mkdir -p "${OPT_APP_PATH}"
 

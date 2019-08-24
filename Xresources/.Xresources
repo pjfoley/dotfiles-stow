@@ -1,0 +1,69 @@
+
+!! font configurations (xft)
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+/*URxvt SETTINGS*/
+URxvt.xftAntialias:       true
+URxvt.saveLines:          8192
+
+URxvt.url-launcher:       i3-sensible-browser
+URxvt.underlineURLs:      true
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+!  - catch ugly URLs
+URxvt*cutchars:          `"&()*,.-<=>?@[]{}|\\\/':;#$%^+"
+
+urxvt.scrollBar: false
+URxvt*scrollTtyKeypress:      true
+URxvt*scrollTtyOutput:        false
+URxvt*skipScroll:             true
+
+
+#include ".config/base16-xresources/base16-shapeshifter.dark.256.xresources"
+URxvt.background:       #151718
+URxvt.foreground:       #d6d6d6
+
+
+URxvt.perl-ext:           default,clipboard,matcher,searchable-scrollback,selection
+
+
+URxvt.font:       xft:Liberation Mono Powerline:size=15, \
+                  xft:Inconsolata for Powerline:size=15, \
+                  xft:materialdesignicons-webfont:size=12, \
+                  xft:fontawesome-webfont:size=12
+
+URxvt.italicFont: xft:Liberation Mono Powerline:style=italic:size=15, \
+                  xft:Inconsolata for Powerline:style=italic:size=15, \
+                  xft:materialdesignicons-webfont:style=italic:size=12, \
+                  xft:fontawesome-webfont:style=italic:size=12
+
+URxvt.boldFont:   xft:Liberation Mono Powerline:style=bold:size=15, \
+                  xft:Inconsolata for Powerline:style=bold:size=15, \
+                  xft:materialdesignicons-webfont:style=bold:size=12, \
+                  xft:fontawesome-webfont:style=bold:size=12
+
+URxvt.boldItalicFont: xft:Liberation Mono Powerline:style=Bold Italic:size=15, \
+                  xft:Inconsolata for Powerline:style=Bold Italic:size=15, \
+                  xft:materialdesignicons-webfont:style=Bold Italic:size=12, \
+                  xft:fontawesome-webfont:style=Bold Italic:size=12
+
+/*
+
+URxvt.letterSpace: -1
+
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,font-size
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+URxvt.intensityStyles: false
+URxvt.keysym.Control-Up: perl:font-size:increase
+URxvt.keysym.Control-Down: perl:font-size:decrease
+*/
+

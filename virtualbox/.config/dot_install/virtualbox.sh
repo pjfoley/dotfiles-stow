@@ -3,7 +3,7 @@
 VIRTBOX_APT_LIST="/etc/apt/sources.list.d/virtualbox.list"
 
 KEY_VIRTBX_ASC_2016="B9F8D658297AF3EFC18D5CDFA2F683C52980AECF"
-VIRTUALBOX_REPOSITORY="deb http://download.virtualbox.org/virtualbox/debian stretch contrib"
+VIRTUALBOX_REPOSITORY="deb http://download.virtualbox.org/virtualbox/debian buster contrib"
 
 VIRTBX_ASC_2016=$(mktemp --suffix=-virtualbox)
 trap "{ rm -f ${VIRTBX_ASC_2016} ${VIRTBX_ASC}; }" EXIT

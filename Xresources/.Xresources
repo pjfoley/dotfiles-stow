@@ -24,7 +24,7 @@ URxvt*scrollTtyOutput:        false
 URxvt*skipScroll:             true
 
 
-#include ".config/base16-xresources/base16-shapeshifter.dark.256.xresources"
+#include ".config/base16-xresources/xresources/base16-google-dark-256.xresources"
 URxvt.background:       #151718
 URxvt.foreground:       #d6d6d6
 
@@ -32,29 +32,19 @@ URxvt.foreground:       #d6d6d6
 URxvt.perl-ext:           default,clipboard,matcher,searchable-scrollback,selection
 
 
-URxvt.font:       xft:Liberation Mono Powerline:size=15, \
-                  xft:Inconsolata for Powerline:size=15, \
-                  xft:materialdesignicons-webfont:size=12, \
-                  xft:fontawesome-webfont:size=12
+URxvt.letterSpace: -1
+URxvt.font:       xft:Liberation Mono:size=12, \
+                  xft:Material Design Icons:size=10, \
+                  xft:Fontawesome:size=10
 
-URxvt.italicFont: xft:Liberation Mono Powerline:style=italic:size=15, \
-                  xft:Inconsolata for Powerline:style=italic:size=15, \
-                  xft:materialdesignicons-webfont:style=italic:size=12, \
-                  xft:fontawesome-webfont:style=italic:size=12
+URxvt.italicFont: xft:Liberation Mono:style=italic:size=10
 
-URxvt.boldFont:   xft:Liberation Mono Powerline:style=bold:size=15, \
-                  xft:Inconsolata for Powerline:style=bold:size=15, \
-                  xft:materialdesignicons-webfont:style=bold:size=12, \
-                  xft:fontawesome-webfont:style=bold:size=12
+URxvt.boldFont:   xft:Liberation Mono:style=bold:size=10
 
-URxvt.boldItalicFont: xft:Liberation Mono Powerline:style=Bold Italic:size=15, \
-                  xft:Inconsolata for Powerline:style=Bold Italic:size=15, \
-                  xft:materialdesignicons-webfont:style=Bold Italic:size=12, \
-                  xft:fontawesome-webfont:style=Bold Italic:size=12
+URxvt.boldItalicFont: xft:Liberation Mono:style=Bold Italic:size=10
 
 /*
 
-URxvt.letterSpace: -1
 
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,font-size

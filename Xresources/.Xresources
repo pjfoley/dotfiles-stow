@@ -18,24 +18,24 @@ URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 !  - catch ugly URLs
 URxvt*cutchars:          `"&()*,.-<=>?@[]{}|\\\/':;#$%^+"
 
-urxvt.scrollBar: false
+URxvt.scrollBar: false
 URxvt*scrollTtyKeypress:      true
 URxvt*scrollTtyOutput:        false
 URxvt*skipScroll:             true
 
 
-#include ".config/base16-xresources/xresources/base16-google-dark-256.xresources"
+#include ".config/base16-xresources/xresources/base16-google-dark-256.Xresources"
 URxvt.background:       #151718
 URxvt.foreground:       #d6d6d6
 
 
-URxvt.perl-ext:           default,clipboard,matcher,searchable-scrollback,selection
+URxvt.perl-ext:           default,matcher,searchable-scrollback,selection,font-size
+URxvt.keysym.Control-Up: perl:font-size:increase
+URxvt.keysym.Control-Down: perl:font-size:decrease
 
 
 URxvt.letterSpace: -1
-URxvt.font:       xft:Liberation Mono:size=12, \
-                  xft:Material Design Icons:size=10, \
-                  xft:Fontawesome:size=10
+URxvt.font:       xft:Liberation Mono:size=12
 
 URxvt.italicFont: xft:Liberation Mono:style=italic:size=10
 
@@ -47,13 +47,10 @@ URxvt.boldItalicFont: xft:Liberation Mono:style=Bold Italic:size=10
 
 
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,font-size
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
 URxvt.intensityStyles: false
-URxvt.keysym.Control-Up: perl:font-size:increase
-URxvt.keysym.Control-Down: perl:font-size:decrease
 */
 

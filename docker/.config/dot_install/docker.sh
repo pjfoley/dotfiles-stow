@@ -3,7 +3,7 @@
 DOCKER_APT_LIST="/etc/apt/sources.list.d/docker.list"
 
 KEY_DOCKER_ASC_2016="9DC858229FC7DD38854AE2D88D81803C0EBFCD88"
-DOCKER_REPOSITORY="deb [arch=amd64] https://download.docker.com/linux/debian stretch stable"
+DOCKER_REPOSITORY="deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
 
 DOCKER_ASC_2016=$(mktemp --suffix=-docker)
 trap "{ rm -f ${DOCKER_ASC_2016} ${DOCKER_ASC}; }" EXIT

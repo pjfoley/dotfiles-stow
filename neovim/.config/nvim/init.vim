@@ -52,11 +52,11 @@ call plug#end()
 " Color-scheme :
 "###############
 
-" let base16colorspace=256
+let base16colorspace=256
 set background=dark
 colorscheme base16-3024
 
-set termguicolors
+" set termguicolors
 " Disables color-scheme background color
 hi Normal guibg=NONE
 

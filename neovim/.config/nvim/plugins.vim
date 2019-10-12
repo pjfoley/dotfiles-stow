@@ -29,7 +29,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/echodoc.vim'
 Plug 'tpope/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise' " vim-endwise doesn't play nice with coc
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'

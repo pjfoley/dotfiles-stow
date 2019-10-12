@@ -1,4 +1,4 @@
-exe 'source ' ~/.config/nvim/plugins.vim
+exe 'source ' . '~/.config/nvim/plugins.vim'
 
 " Map leader to space bar
 " Note: This line MUST come before any <leader> mappings

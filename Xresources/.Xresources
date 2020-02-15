@@ -1,0 +1,56 @@
+
+!! font configurations (xft)
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+/*URxvt SETTINGS*/
+URxvt.xftAntialias:       true
+URxvt.saveLines:          8192
+
+URxvt.url-launcher:       i3-sensible-browser
+URxvt.underlineURLs:      true
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+!  - catch ugly URLs
+URxvt*cutchars:          `"&()*,.-<=>?@[]{}|\\\/':;#$%^+"
+
+URxvt.scrollBar: false
+URxvt*scrollTtyKeypress:      true
+URxvt*scrollTtyOutput:        false
+URxvt*skipScroll:             true
+
+
+#include ".config/base16-xresources/xresources/base16-google-dark-256.Xresources"
+URxvt.background:       #151718
+URxvt.foreground:       #d6d6d6
+
+
+URxvt.perl-ext:           default,matcher,searchable-scrollback,selection,font-size
+URxvt.keysym.Control-Up: perl:font-size:increase
+URxvt.keysym.Control-Down: perl:font-size:decrease
+
+
+URxvt.letterSpace: -1
+URxvt.font:       xft:Liberation Mono:size=12
+
+URxvt.italicFont: xft:Liberation Mono:style=italic:size=10
+
+URxvt.boldFont:   xft:Liberation Mono:style=bold:size=10
+
+URxvt.boldItalicFont: xft:Liberation Mono:style=Bold Italic:size=10
+
+/*
+
+
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.clipboard.copycmd:  xsel -ib
+URxvt.clipboard.pastecmd: xsel -ob
+URxvt.intensityStyles: false
+*/
+
